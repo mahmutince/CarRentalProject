@@ -33,9 +33,20 @@ namespace Business.Concrete
         {
             _carDal.Delete(car);
         }
-        public List<Car> GetById(int carId)
+
+        public List<Car> GetCarsByBrandId(int brandId)
         {
-            return _carDal.GetById(carId);
+            return _carDal.GetAll(c=> c.BrandId==brandId);
+        }
+
+        public List<Car> GetCarsByColorId(int colorId)
+        {
+            return _carDal.GetAll(c=> c.ColorId==colorId);
+        }
+
+        public List<Car> GetCarById(int carId)
+        {
+            return _carDal.GetAll(c=> c.CarId==carId);
         }
     }
 }
