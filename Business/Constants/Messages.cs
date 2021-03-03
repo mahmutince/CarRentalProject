@@ -12,6 +12,8 @@ namespace Business.Constants
         public static string IncorrectTransaciton = "Hatalı işlem.";
         public static string MaintenanceTime = "Bakım saati.";
         public static string CarsListed = "Araçlar listelendi.";
-        
+        public static string BrandLimitExceded = "Marka sınırına ulaşıldı.";
+
+        public static string CarCountLimit = "Bu marka için araç sınırına ulaşıldı.";
     }
 }

@@ -94,7 +94,7 @@ namespace ConsoleUI
                 Console.WriteLine("Araç No: {0} Marka: {1} Renk: {2} Günlük Ücret: {3} Model Yılı: {4} Tanım: {5}", car.CarId, car.BrandId, car.ColorId, car.DailyPrice, car.ModelYear, car.Description);
             }
             Console.WriteLine("\n---Araç id 4 olan aracı göster---\n");
-            var carById = carManager.GetCarById(4).Data;
+            var carById = carManager.GetById(4).Data;
             Console.WriteLine("Araç No: {0} Marka: {1} Renk: {2} Günlük Ücret: {3} Model Yılı: {4} Tanım: {5}", carById.CarId, carById.BrandId, carById.ColorId, carById.DailyPrice, carById.ModelYear, carById.Description);
 
         }
