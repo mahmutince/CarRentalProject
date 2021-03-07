@@ -18,11 +18,13 @@ namespace Business.Concrete
     {
         ICarDal _carDal;
         IBrandService _brandService;
+        ICarImageService _carImageService;
 
-        public CarManager(ICarDal carDal, IBrandService brandService)
+        public CarManager(ICarDal carDal, IBrandService brandService, ICarImageService carImageService)
         {
             _carDal = carDal;
             _brandService = brandService;
+            _carImageService = carImageService;
         }
 
         public IDataResult<List<Car>> GetAll()
@@ -106,5 +108,7 @@ namespace Business.Concrete
             return new SuccessResult();
 
         }
+
+    
     }
 }

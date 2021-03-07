@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Core.Entities.Concrete;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -30,16 +31,16 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
-        [HttpGet("getbyid")]
-        public IActionResult GetById(int id)
-        {
-            var result = _userService.GetById(id);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
+        //[HttpGet("getbyid")]
+        //public IActionResult GetById(int id)
+        //{
+        //    //var result = _userService.GetById(id);
+        //    //if (result.Success)
+        //    //{
+        //    //    return Ok(result);
+        //    //}
+        //    //return BadRequest(result);
+        //}
         [HttpPost("add")]
         public IActionResult Add(User user)
         {

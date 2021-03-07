@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using Business.Abstract;
+using Core.Utilities.Helpers;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Microsoft.AspNetCore.Http;
 
 namespace Business.Concrete
 {
@@ -17,8 +20,10 @@ namespace Business.Concrete
             _carImageDal = carImageDal;
         }
 
-        public IResult Add(CarImage carImage)
+        public IResult Add(IFormFile file,CarImage carImage)
         {
+            carImage.ImagePath = FileHelper.Add(file);
+            carImage.CreateDate = DateTime.Now;
             _carImageDal.Add(carImage);
             return new SuccessResult();
         }
@@ -29,8 +34,10 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        public IResult Update(CarImage carImage)
+        public IResult Update(IFormFile file, CarImage carImage)
         {
+            carImage.ImagePath = FileHelper.Update(_carImageDal.Get(p => p.ImageId == carImage.ImageId).ImagePath, file);
+            carImage.CreateDate = DateTime.Now;
             _carImageDal.Update(carImage);
             return new SuccessResult();
         }

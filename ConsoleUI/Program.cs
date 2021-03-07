@@ -55,49 +55,49 @@ namespace ConsoleUI
             }
         }
 
-        private static void CarDetailsDtoTest()
-        {
-            CarManager carManager = new CarManager(new EfCarDal());
-            var result = carManager.GetCarDetails();
-            if (result.Success==true)
-            {
-                foreach (var car in result.Data)
-                {
-                    Console.WriteLine("Araç No: {0}\n Marka: {1} \n  Renk: {2} \n   Günlük Ücret: {3}\n", car.CarId, car.BrandName, car.ColorName, car.DailyPrice);
+        //private static void CarDetailsDtoTest()
+        //{
+        //    CarManager carManager = new CarManager(new EfCarDal());
+        //    var result = carManager.GetCarDetails();
+        //    if (result.Success==true)
+        //    {
+        //        foreach (var car in result.Data)
+        //        {
+        //            Console.WriteLine("Araç No: {0}\n Marka: {1} \n  Renk: {2} \n   Günlük Ücret: {3}\n", car.CarId, car.BrandName, car.ColorName, car.DailyPrice);
 
-                }
-                Console.WriteLine(result.Message);
-            }
-            else
-            {
-                Console.WriteLine(result.Message);
-            }
+        //        }
+        //        Console.WriteLine(result.Message);
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine(result.Message);
+        //    }
             
-        }
+        //}
 
-        private static void CarManagerTest()
-        {
-            CarManager carManager = new CarManager(new EfCarDal());
-            Console.WriteLine("\n---Tüm araçları göster---\n");
-            foreach (var car in carManager.GetAll().Data)
-            {
-                Console.WriteLine("Araç No: {0} Marka: {1} Renk: {2} Günlük Ücret: {3} Model Yılı: {4} Tanım: {5}", car.CarId, car.BrandId, car.ColorId, car.DailyPrice, car.ModelYear, car.Description);
-            }
-            Console.WriteLine("\n---Renk id 1 olan araçları göster---\n");
-            foreach (var car in carManager.GetCarsByColorId(1).Data)
-            {
-                Console.WriteLine("Araç No: {0} Marka: {1} Renk: {2} Günlük Ücret: {3} Model Yılı: {4} Tanım: {5}", car.CarId, car.BrandId, car.ColorId, car.DailyPrice, car.ModelYear, car.Description);
-            }
-            Console.WriteLine("\n---Marka id 1 olan araçları göster---\n");
-            foreach (var car in carManager.GetCarsByBrandId(1).Data)
-            {
-                Console.WriteLine("Araç No: {0} Marka: {1} Renk: {2} Günlük Ücret: {3} Model Yılı: {4} Tanım: {5}", car.CarId, car.BrandId, car.ColorId, car.DailyPrice, car.ModelYear, car.Description);
-            }
-            Console.WriteLine("\n---Araç id 4 olan aracı göster---\n");
-            var carById = carManager.GetById(4).Data;
-            Console.WriteLine("Araç No: {0} Marka: {1} Renk: {2} Günlük Ücret: {3} Model Yılı: {4} Tanım: {5}", carById.CarId, carById.BrandId, carById.ColorId, carById.DailyPrice, carById.ModelYear, carById.Description);
+        //private static void CarManagerTest()
+        //{
+        //    CarManager carManager = new CarManager(new EfCarDal());
+        //    Console.WriteLine("\n---Tüm araçları göster---\n");
+        //    foreach (var car in carManager.GetAll().Data)
+        //    {
+        //        Console.WriteLine("Araç No: {0} Marka: {1} Renk: {2} Günlük Ücret: {3} Model Yılı: {4} Tanım: {5}", car.CarId, car.BrandId, car.ColorId, car.DailyPrice, car.ModelYear, car.Description);
+        //    }
+        //    Console.WriteLine("\n---Renk id 1 olan araçları göster---\n");
+        //    foreach (var car in carManager.GetCarsByColorId(1).Data)
+        //    {
+        //        Console.WriteLine("Araç No: {0} Marka: {1} Renk: {2} Günlük Ücret: {3} Model Yılı: {4} Tanım: {5}", car.CarId, car.BrandId, car.ColorId, car.DailyPrice, car.ModelYear, car.Description);
+        //    }
+        //    Console.WriteLine("\n---Marka id 1 olan araçları göster---\n");
+        //    foreach (var car in carManager.GetCarsByBrandId(1).Data)
+        //    {
+        //        Console.WriteLine("Araç No: {0} Marka: {1} Renk: {2} Günlük Ücret: {3} Model Yılı: {4} Tanım: {5}", car.CarId, car.BrandId, car.ColorId, car.DailyPrice, car.ModelYear, car.Description);
+        //    }
+        //    Console.WriteLine("\n---Araç id 4 olan aracı göster---\n");
+        //    var carById = carManager.GetById(4).Data;
+        //    Console.WriteLine("Araç No: {0} Marka: {1} Renk: {2} Günlük Ücret: {3} Model Yılı: {4} Tanım: {5}", carById.CarId, carById.BrandId, carById.ColorId, carById.DailyPrice, carById.ModelYear, carById.Description);
 
-        }
+        //}
 
         private static void ColorTest()
         {
