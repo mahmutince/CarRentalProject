@@ -19,7 +19,9 @@ using Microsoft.IdentityModel.Tokens;
 using Core.Utilities.Security.JWT;
 using Core.Utilities.Security.Encryption;
 using Microsoft.AspNetCore.Http;
-using Core.IoC;
+using Core.Utilities.IoC;
+using Core.Extensions;
+using Core.DependencyResolver;
 
 namespace WebAPI
 {
@@ -36,7 +38,7 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            
             //services.AddCors(options => { options.AddPolicy("AllowOrigin", builder => builder.WithOrigins("http://localhost:4200")); });
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
@@ -54,7 +56,9 @@ namespace WebAPI
 
                 };
             });
-            ServiceTool.Create(services);
+            services.AddDependencyResolvers(new ICoreModule[] {
+            new CoreModule()
+            });
 
 
         }

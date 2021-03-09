@@ -40,7 +40,7 @@ namespace ConsoleUI
             var result = userManager.GetAll();
             foreach (var item in result.Data)
             {
-                Console.WriteLine("Id: {0} İsim: {1}", item.UserId, item.FirstName);
+                Console.WriteLine("Id: {0} İsim: {1}", item.Id, item.FirstName);
             }
         }
 
