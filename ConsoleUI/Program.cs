@@ -17,7 +17,8 @@ namespace ConsoleUI
             //CarDetailsDtoTest();
             //RentalListTest();
             //UserTest();
-            RentalAddTest();
+            //RentalAddTest();
+
 
         }
 
